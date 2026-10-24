@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+cs111virtualenvironment/
+
+# Large datasets & raw files (DO NOT COMMIT RAW CSVs)
+data/
+*.csv
+*.tsv
+*.zip
+*.parquet
+
+# IDE / Editor configuration
+.vscode/
+.idea/
+.DS_Store
