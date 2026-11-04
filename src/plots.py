@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 from pathlib import Path
 import pandas as pd
+import numpy as np
+from data_loader import load_the_data
 
 
 z_cols = [
@@ -46,7 +48,29 @@ def plot_correlations(output_path):
     pass
 
 
+def mental_health_scatter_plot(output_path):
+    df = load_the_data().sample(n=2500, random_state=42)
+    stress_levels = df["stress"]
+    gpa = df["gpa"]
+    m, c = np.polyfit(stress_levels, gpa, 1)
+    trendline = m*stress_levels + c
+    plt.scatter(stress_levels, gpa, color='red', s=1, label='Data Points')
+    plt.plot(stress_levels, trendline, color='red', linestyle='--', linewidth=2, label=f'OLS Trendline (y = {m:.2f}x + {abs(c):.2f})')
+    plt.xlabel("Stress Levels (From 0 to 10)")
+    plt.ylabel("GPA (From 0 to 2)")
+    plt.title("Stress Levels vs. GPA")
+    plt.legend()
+    
+    plt.grid(True, linestyle=':', alpha=0.6)
+    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+    plt.close()
+    pass
+
+
+
 if __name__ == '__main__':
 
-    out_path = figures_folder / "correlations_chart.png"
-    plot_correlations(out_path)
+    out_path1 = figures_folder / "correlations_chart.png"
+    plot_correlations(out_path1)
+    out_path2 = figures_folder / "stress_gpa_scatter_plot.png"
+    mental_health_scatter_plot(out_path2)
