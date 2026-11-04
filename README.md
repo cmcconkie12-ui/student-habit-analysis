@@ -14,7 +14,6 @@ src/plots.py: Visualizes the data
 
 ![Domain Correlation](outputs/figures/correlations_chart.png)
 
-
 ## Getting Started
 
 ### Dependencies
