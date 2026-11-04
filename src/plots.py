@@ -12,8 +12,10 @@ z_cols = [
     "academic_performance_z"
 ]
 
+
 figures_folder = Path(__file__).resolve().parent.parent / "outputs" / "figures"
 figures_folder.mkdir(parents=True, exist_ok=True)
+
 
 def plot_correlations(output_path):
     corr_file = Path(__file__).resolve().parent.parent / "outputs" / "domain_correlations.csv"
@@ -26,11 +28,11 @@ def plot_correlations(output_path):
     ax.set_yticks(y_positions)
 
     domain_names = [
-        "Academic Performance",
-        "Mental Health",
-        "Financial Security",
+        "Digital Discipline",
         "Physical Health",
-        "Digital Discipline"
+        "Financial Security",
+        "Mental Health",
+        "Academic Performance"
     ]
     ax.set_yticklabels(domain_names)    
     
@@ -46,7 +48,6 @@ def plot_correlations(output_path):
     plt.savefig(output_path, dpi=300, bbox_inches='tight')
     plt.close()
     pass
-
 
 
 if __name__ == '__main__':

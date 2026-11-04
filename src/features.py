@@ -2,6 +2,7 @@ import pandas as pd
 from data_loader import load_the_data
 from pathlib import Path
 
+
 def z_score(cols: list[str], df: pd.DataFrame) -> pd.DataFrame:
     "Computes z scores for the columns of features in the dataset"
     return (df[cols] - df[cols].mean()) / df[cols].std()

@@ -11,15 +11,8 @@ src/features.py: Separates the various domains, determines z-scores, and then us
 src/plots.py: Visualizes the data
 
 ### Results
-#### Correlation by Domain (out of 1)
-Digital Discipline        0.334960
-Physical Health           0.377966
-Financial Security        0.439708
-Mental Health             0.486617
-Academic Performance      0.819934
 
 ![Domain Correlation](outputs/figures/correlations_chart.png)
-
 
 
 ## Getting Started
