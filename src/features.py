@@ -103,11 +103,11 @@ def create_features(df: pd.DataFrame) -> pd.DataFrame:
 
 
 z_cols = [
+    "academic_performance_z",
     "mental_health_z",
-    "digital_discipline_z",
     "financial_security_z",
     "physical_health_z",
-    "academic_performance_z"
+    "digital_discipline_z"
 ]
 
 

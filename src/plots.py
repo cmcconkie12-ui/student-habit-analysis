@@ -1,4 +1,3 @@
-
 import matplotlib.pyplot as plt
 from pathlib import Path
 import pandas as pd
@@ -27,15 +26,12 @@ def plot_correlations(output_path):
     bars = ax.barh(y_positions, correlations.values, height=0.7, color='skyblue', edgecolor='navy')
     ax.set_yticks(y_positions)
 
-    domain_names = [
-        "Digital Discipline",
-        "Physical Health",
-        "Financial Security",
-        "Mental Health",
-        "Academic Performance"
+    formatted_labels = [
+        label.replace("_z", "").replace("_", " ").title()
+        for label in correlations.index
     ]
-    ax.set_yticklabels(domain_names)    
-    
+
+    ax.set_yticklabels(formatted_labels)    
     ax.set_xlim(-0.35, 1.0)
 
     ax.set_title("Domain Correlations")
