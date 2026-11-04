@@ -34,7 +34,7 @@ def plot_correlations(output_path):
     ]
 
     ax.set_yticklabels(formatted_labels)    
-    ax.set_xlim(-0.35, 1.0)
+    ax.set_xlim(-0.2, 1.0)
 
     ax.set_title("Domain Correlations")
     ax.set_xlabel("Correlation with GPA (score out of 1)")
