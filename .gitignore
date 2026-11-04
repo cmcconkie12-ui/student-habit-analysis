@@ -9,7 +9,7 @@ venv/
 env/
 cs111virtualenvironment/
 
-# Large datasets & raw files (DO NOT COMMIT RAW CSVs)
+# Large datasets & raw files
 data/
 *.csv
 *.tsv

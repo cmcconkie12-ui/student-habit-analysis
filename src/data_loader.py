@@ -2,9 +2,6 @@ from pathlib import Path
 import pandas as pd
 
 
-
-
-
 def get_data_path():
     project_root = Path(__file__).resolve().parent.parent
     csv_path = project_root / "data" / "college_students_habits_1M.csv"
